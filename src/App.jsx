@@ -1,17 +1,29 @@
-import Sidebar from './components/Sidebar'
-import BentoGrid from './components/BentoGrid'
-import Hero from './components/Hero'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Hero from "./components/Hero";
+import BentoGrid from "./components/BentoGrid";
+import Projects from "./pages/Projects"; // 👈 svarbu!
 
-function App() {
+export default function App() {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <main className="flex-1 p-6 space-y-10">
-        <Hero />
-        <BentoGrid />
-      </main>
-    </div>
-  )
+    <Router>
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-1">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <BentoGrid />
+                </>
+              }
+            />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
 }
-
-export default App

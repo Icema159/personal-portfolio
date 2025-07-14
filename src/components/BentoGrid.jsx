@@ -1,8 +1,9 @@
 import BentoBox from "./BentoBox";
 export default function BentoGrid() {
     return (
-        <div className="p-6 max-w-6xl mx-auto">
-            <div className="bg-emerald-950 rounded-xl border border-emerald-800 p-6 grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="relative p-6 max-w-6xl mx-auto">
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-emerald-500/30 via-emerald-800/20 to-emerald-900/30 blur-lg" />
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-3 bg-zinc-950 rounded-xl p-6">
                 {/* Kairė – 4 dėžutės */}
                 <div className="md:col-span-2 grid grid-cols-2 gap-3">
                     <BentoBox title="100+" subtitle="Completed Projects" />

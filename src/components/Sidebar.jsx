@@ -1,6 +1,6 @@
 import { Home, Folder, User, Mail } from "lucide-react"
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
-
+import { Link } from "react-router-dom"
 const navItems = [
     { icon: <Home />, label: "Home" },
     { icon: <Folder />, label: "Projects" },
@@ -22,13 +22,14 @@ export default function Sidebar() {
                 {/* Navigation */}
                 <nav className="flex flex-col gap-6 w-full items-center">
                     {navItems.map((item, index) => (
-                        <div
+                        <Link
+                            to={item.label === "Home" ? "/" : `/${item.label.toLowerCase()}`}
                             key={index}
                             className="flex items-center gap-3 text-white hover:text-emerald-400 cursor-pointer"
                         >
                             <div className="text-xl">{item.icon}</div>
                             <span className="text-base">{item.label}</span>
-                        </div>
+                        </Link>
                     ))}
                 </nav>
             </div>
