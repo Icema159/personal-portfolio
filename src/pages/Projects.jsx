@@ -1,4 +1,6 @@
 // src/pages/Projects.jsx
+import PageWrapper from "../components/PageWrapper"
+
 export default function Projects() {
     const projects = [
         {
@@ -19,27 +21,29 @@ export default function Projects() {
     ];
 
     return (
-        <div className="p-10 text-white">
-            <h1 className="text-3xl font-bold mb-8">My GitHub Projects</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        className="bg-zinc-900 border border-zinc-700 rounded-lg p-6 hover:border-emerald-500 transition"
-                    >
-                        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-                        <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
-                        <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-emerald-400 hover:underline"
+        <PageWrapper>
+            <div className="p-10 text-white">
+                <h1 className="text-3xl font-bold mb-8">My GitHub Projects</h1>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {projects.map((project, index) => (
+                        <div
+                            key={index}
+                            className="bg-zinc-900 border border-zinc-700 rounded-lg p-6 hover:border-emerald-500 transition"
                         >
-                            View on GitHub →
-                        </a>
-                    </div>
-                ))}
+                            <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+                            <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-emerald-400 hover:underline"
+                            >
+                                View on GitHub →
+                            </a>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </PageWrapper>
     );
 }
