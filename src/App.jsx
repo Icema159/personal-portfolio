@@ -6,7 +6,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import PageWrapper from "./components/PageWrapper"
 import { AnimatePresence } from "framer-motion";
-
+import Contacts from "./pages/Contacts"
 
 export default function App() {
   return (
@@ -36,6 +36,7 @@ function AppContent() {
             />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contacts />} />
           </Routes>
         </AnimatePresence>
       </div>

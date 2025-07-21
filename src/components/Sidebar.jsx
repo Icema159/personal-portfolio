@@ -1,5 +1,5 @@
 import { Home, Folder, User, Mail } from "lucide-react"
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
+import { FaDownload, FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom"
 const navItems = [
     { icon: <Home />, label: "Home" },
@@ -14,7 +14,14 @@ export default function Sidebar() {
             {/* Top section */}
             <div className="flex flex-col items-center space-y-8">
                 {/* Profile placeholder */}
-                <div className="w-24 h-24 rounded-full bg-zinc-800" />
+                {/* Profile photo */}
+                <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
+                    <img
+                        src="/me.jpg"
+                        alt="Aismantas"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
                 {/* Name */}
                 <div className="text-white text-lg font-bold text-center">
                     Aismantas Skinulis
@@ -36,9 +43,27 @@ export default function Sidebar() {
 
             {/* Bottom: Socials */}
             <div className="flex flex-col items-center gap-5 text-zinc-400">
-                <a href="#"><FaGithub className="hover:text-white text-xl" /></a>
-                <a href="#"><FaLinkedin className="hover:text-white text-xl" /></a>
-                <a href="#"><FaEnvelope className="hover:text-white text-xl" /></a>
+                <a href="https://github.com/Icema159" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="hover:text-white text-xl" />
+                </a>
+                <a href="https://www.linkedin.com/in/aismantas-skinulis-202bb8366/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="hover:text-white text-xl" />
+                </a>
+                <a
+                    href="https://www.facebook.com/aismantas.skinulis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <FaFacebook className="hover:text-white text-xl" />
+                </a>
+                <a
+                    href="/cv-aismantas.pdf"
+                    download
+                    className="hover:text-white text-xl"
+                    title="Download my CV"
+                >
+                    <FaDownload />
+                </a>
             </div>
         </div>
     )
